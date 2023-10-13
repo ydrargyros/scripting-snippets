@@ -1,0 +1,2 @@
+def cmd = "mvn clean install -T${mavenConfig.threads} -DskipTests=${params.SKIP_UT ? 'true' : 'false'} ${DEBUG ? '-X' : ''}"
+// The if is implicit and used more elegantly. Adds to maintenability of oneliner commands used
