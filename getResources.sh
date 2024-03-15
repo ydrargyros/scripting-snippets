@@ -1,0 +1,1 @@
+echo -e "CPU:\t"`nproc`;echo -e "RAM:\t"` awk '/Mem:/ {print $2}' <(free -g)`;
