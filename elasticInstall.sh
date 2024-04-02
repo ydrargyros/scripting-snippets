@@ -14,4 +14,34 @@ autorefresh=1
 type=rpm-md
 EOL
 
+chown -R elasticsearch:elasticsearch /data/
+
 dnf install --enablerepo=elasticsearch elasticsearch -y;
+
+# After these, elasticsearch is installed on the first node
+# Edit the following variables in /etc/elasticsearch/elasticsearch.yml
+cluster.name: solotax-horizon
+node.name: solontax-horizon01
+path.data: /data
+
+
+
+
+
+
+## Remove Everything
+#Remove elasticsearch installation
+dnf remove --enablerepo=elasticsearch elasticsearch -y;
+#Remove elasticsearch directories and data
+rm -rf /var/lib/elasticsearch/ /data/* /usr/share/elasticsearch/ /etc/elasticsearch/
+
+#Remove Kibana
+dnf remove --enablerepo=elasticsearch kibana -y;
+#Remove Kibana directories
+rm -rf /var/lib/kibana /usr/share/kibana /etc/kibana
+
+
+
+
+
+
