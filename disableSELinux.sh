@@ -1,0 +1,1 @@
+sed -i 's/SELINUX=permissive/SELINUX=disabled/g' /etc/selinux/config && cat /etc/selinux/config;

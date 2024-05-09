@@ -1,7 +1,7 @@
 # Centos 9 using dnf
 dnf update -y
 
-dnf install epel-release -y; dnf install wget curl btop htop nano -y;
+dnf install epel-release -y; dnf install wget curl btop htop nano tmux -y;
 
 cat >/etc/yum.repos.d/elasticsearch.repo <<EOL
 [elasticsearch]
@@ -43,5 +43,9 @@ rm -rf /var/lib/kibana /usr/share/kibana /etc/kibana
 
 
 
+
+rm -rf /opt/Elastic/Agent/ /etc/systemd/system/elastic-agent.service
+rpm -qa | grep agent
+rpm -e rpm -e elastic-agent-8.13.2-1.x86_64
 
 

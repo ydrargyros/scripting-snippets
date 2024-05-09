@@ -32,3 +32,7 @@ curl -k -X PUT "localhost:9200/_settings
 {
   "index.number_of_replicas": 0
 }" -H 'Content-Type: application/json'
+
+
+
+curl -u elastic:iVPEON8HIhxu1Pzhnyir --cacert /etc/elasticsearch/certs/http_ca.crt "https://127.0.0.1:9200/_cat/nodes?v&pretty"
